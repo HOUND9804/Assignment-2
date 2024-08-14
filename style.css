@@ -72,10 +72,19 @@
   font-style: italic;
 }
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
 .nav-bar {
   justify-content: space-between;
-  max-width: 66.25rem; /* 1060px */
+  max-width: 66.25rem;
   margin: 0 auto;
+  padding: 20px;
   align-items: center;
 }
 .navlinks{
@@ -86,7 +95,12 @@
   padding-right: 20px;
   padding-left: 0px;
 }
-
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
 .nav-item {
   list-style: none;
   margin-left: 20px;
@@ -280,11 +294,15 @@ th, td {
   gap: 12px;
   margin-bottom: 10px;
 }
-.inputs input {
+.inputs input,select {
   background-color: rgba(255, 255, 255, 0.1);
   border: 0px;
   border-radius: 8px;
   padding: 8px;
+}
+.inputs select option{
+  color: rgb(20, 19, 19);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .span{
   grid-column: span 2;
@@ -306,19 +324,102 @@ th, td {
   gap: 20px;
   padding:20px;
 }
+.trainer-1,.trainer-2,.trainer-3,.trainer-4,.trainer-5,.trainer-6{
+  position: relative;
+  top: -110px;
+  left: -50px;
+}
 .trainer-img{
   border-radius: 18px;
   width: 100%;
   height: 272px;
 }
-
+/* get started section */
+.get-started{
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  justify-content: space-around;
+}
+.get-started-links{
+  display: flex;
+  flex-direction: column;
+}
+.get-started-link{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* sauna section */
+.sauna{
+  margin: 0 auto;
+  max-width: 1060px;
+  margin-top: 100px;
+  justify-content: space-between;
+  padding: 32px;
+  background-color:rgba(34, 34, 34, 1) ;
+}
+.sauna-img{
+  width: 366px;            
+  height:312px; 
+  border-radius:18px;            
+  overflow: hidden;      
+  position: relative;
+}
+.sauna-img img{
+  top: 0px;
+  left: 0px;
+  width: 100%;             
+  height: 100%;             
+  object-fit: contain;  
+}
+/* footer */
+footer{
+  margin: 0px;
+  background-color:black
+}
+.line-container {
+  text-align: center;
+   background-color: rgba(255, 255, 255, 0.1);
+}
+.line {
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  width: 1060px;
+}
+.copy-right{
+  margin:0px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
 /* responsive for small devices */
 @media screen and (max-width: 556px) {
   .banner{
     flex-direction: column;
   }
-  .navlinks{
-    display: none;
+  .navlinks {
+    display: none; /* Hide menu items by default on small screens */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    right: 0;
+    background-color: rgba(34, 34, 34, 1); /* Adjust background if needed */
+    width: 100%;
+    padding: 10px 20px;
+  }
+  .nav-links.active {
+    display: flex; /* Show menu items when toggled */
+  }
+  .menu-toggle {
+    display: flex; /* Show hamburger icon on small screens */
+  }
+  .nav-item {
+    margin: 10px 0; /* Adjust spacing for vertical layout */
+  }
+
+.brand {
+    margin-right: auto; /* Align brand to the left */
   }
   .banner{
     margin-left: 10px;
@@ -357,16 +458,16 @@ th, td {
     gap: 31px;
   }
   .running-img-con {
-    width: 287px;             /* Adjust width for small screens */
-    height: 180px;            /* Adjust height for small screens */
+    width: 287px;             
+    height: 180px;            
   }
 
   .running-img {
     top: 0px;
     left: 0px;
-    width: 100%;              /* Ensure the image fills the container */
-    height: 100%;             /* Ensure the image fills the container */
-    object-fit: contain;      /* Ensure the entire image fits within the container */
+    width: 100%;              
+    height: 100%;             
+    object-fit: contain;     
   }
   /* trainnings section*/
   .trainings{
@@ -389,8 +490,6 @@ th, td {
   }
   .BMI-calculator{
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
   .BMI-heading>h3{
     margin-left: -120px;
@@ -400,5 +499,16 @@ th, td {
   }
   .trainers{
     grid-template-columns: repeat(1,1fr);
+  }
+  .trainer-1,.trainer-4{
+    display: none;
+  }
+  .get-started{
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+  }
+  .sauna{
+    flex-direction: column;
   }
 }
