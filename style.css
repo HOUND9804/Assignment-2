@@ -21,6 +21,8 @@ body{
 /* shared style */
 .display-flex {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .deep-gray {
@@ -30,7 +32,9 @@ body{
 .black-background {
   background-color: black;
 }
-
+.light-grey-background{
+  background-color: rgba(34, 34, 34, 1)
+}
 .white {
   color: rgba(255, 255, 255, 1);
 }
@@ -127,6 +131,7 @@ body{
 .buttons1 {
   display: flex;
   justify-content: space-between;
+  gap:10px;
 }
 
 .button1 {
@@ -141,19 +146,17 @@ body{
 }
 
 .banner {
-  /* margin-left: 10.875rem;  */
   max-width: 1060px;
   padding: 30px;
   margin: 0 auto;
+  gap: 50px;
 }
 
 .banner-description {
-  max-height: 27.5rem; /* 440px */
-  padding-right: 5rem; /* 80px */
+  max-width: 600px;
 }
 
 .banner-img {
-  margin-left: 5.46875rem; /* 87.5px */
   width: 21.8125rem; /* 349px */
   height: 36.25rem; /* 580px */
 }
@@ -184,8 +187,8 @@ body{
 }
 
 .card1 {
-  margin-left: 14.125rem; /* 290px */
-  margin-top: -29.8125rem; /* -477px */
+  margin-left: 11.125rem; 
+  margin-top: -29.8125rem;
 }
 
 .card2 {
@@ -196,11 +199,176 @@ body{
 }
 
 /* main */
-/* section habit */
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* habits section */
+.habits{
+ max-width:1060px;
+ margin:50px 0;
+ align-items: center;
+}
+.habits-headline{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.habit-images{
+  margin-top: 20px;
+  gap: 10px;
+}
+.habit{
+  text-align: center;
+}
+.habit-image{
+  border-radius: 50%;
+}
+/* running section */
+.running{
+  max-width:1060px;
+  padding: 20px;
+  border-radius: 8px;
+  gap: 40px;
+}
+.running-image{
+  width: 600px;
+  height: 250px;
+  overflow:hidden;
+  position: relative;
+  border-radius: 18px;
+}
+.running-image img {
+  position: absolute;
+ top: -200px;
+ left:-800px
+}
+/* sauna section */
+.sauna{
+  max-width:1060px;
+  margin: 30px 0;
+  padding: 20px;
+  border-radius:8px;
+  gap: 40px;
+}
+.sauna-img{
+  width: 600px;
+}
+.sauna-img img{
+  max-width: 100%;
+  border-radius: 18px;
+}
+/* BMI section */
+.BMI{
+  margin: 50px 0;
+  text-align: center;
+  width:100%;
+  padding-bottom: 40px;
+}
+.BMI-calculator{
+  margin-left: 15%;
+  margin-bottom: 50px;
+  text-align: left;
+}
+.calculate-BMI{
+  margin: 0 auto;
+  max-width: 1060px;
+  gap: 50px;
+}
+.BMI-chart{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border: 1px solid rgb(175, 168, 168);
+}
+.BMI-chart div{
+  border: 1px solid rgb(175, 168, 168);
+  padding: 9px;
+}
+.inputs-headline{
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+.inputs{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.inputs select option{
+  color: rgb(20, 19, 19);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.input{
+  width:95%;
+}
+input,select{
+  background-color:rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border: 0px;
+  border-radius: 10px;
+}
+.span{
+  grid-column: span 2;
+}
+/* trainers section */
+.trainers{
+  background-color: rgba(255, 255, 255, 0.1);
+  max-width: 1060px;
+  display: grid;
+  grid-template-columns:repeat(3,1fr) ;
+  gap: 20px;
+  padding:20px;
+}
+.trainer-1,.trainer-2,.trainer-3,.trainer-4,.trainer-5,.trainer-6{
+  position: relative;
+  width: 40%;
+  top: -100px;
+  left: 50px;
+  margin: -50px;
+}
+.trainer-img{
+  border-radius: 18px;
+  width: 100%;
+  height: 272px;
+}
+/* get started section */
+.get-started{
+  margin-top: 100px;
+  width: 100%;
+  gap: 10%;
+  text-align: left;
+}
+.get-started-links{
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+.get-started-link{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+footer{
+  padding: 30px;
+}
+.line {
+  border-top: 2px solid rgb(176, 163, 163);
+  padding-bottom: 10px;
+}
+.copy-right{
+  margin:0 auto;
+  text-align: center;
+}
 /* responsive for small devices */
 @media screen and (max-width: 556px) {
   .banner{
     flex-direction: column;
+  }
+  .banner-description{
+    width:90%;
   }
   .navlinks {
     display: none; /* Hide menu items by default on small screens */
@@ -237,7 +405,7 @@ body{
     padding: 5px;
   }
   .card1{
-    margin-left: 140px;
+    margin-left: 130px;
     margin-top: -540px;
     padding: 5px;
   }
@@ -250,72 +418,48 @@ body{
 .nav-bar{
   margin-left: 10px;
 }
-/* main */
-/* habit section */
-  .habits{
-    flex-direction: column;
-  }
-
+/* habits section */
+.habit-images{
+  flex-direction: column;
+}
 /* running section */
-  .running{
-    flex-direction: column;
-    gap: 31px;
-  }
-  .running-img-con {
-    width: 287px;             
-    height: 180px;            
-  }
-
-  .running-img {
-    top: 0px;
-    left: 0px;
-    width: 100%;              
-    height: 100%;             
-    object-fit: contain;     
-  }
-  /* trainnings section*/
-  .trainings{
-    margin:0em 1.6em;
-  }
-  .img-3,.img-6{
-    display: none;
-  }
-  .exercise-img-con1 {
-    display: grid;
-    grid-template-columns: repeat(1,1fr 1fr);
-  }
-  .exercise-img-con2 {
-    display: grid;
-    grid-template-columns: repeat(1,.75fr 1.25fr);
-  }
-  /* BMI section */
-  .BMI-heading{
-   margin-left: 10px;
-  }
-  .BMI-calculator{
-    flex-direction: column;
-  }
-  .BMI-heading>h3{
-    margin-left: -20px;
-  }
-  .inputs{
-    width: fit-content;
-  }
-  .trainers{
-    grid-template-columns: repeat(1,1fr);
-  }
-  .trainer-1,.trainer-4{
-    display: none;
-  }
-  .get-started{
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-  }
-  .sauna{
-    flex-direction: column;
-  }
-  .sauna-img{
-    width: 250px;
-  }
+.running{
+  flex-direction: column;
+}
+.running-image{
+  width: 360px;
+}
+.running-image img{
+  max-width: 100%;
+  top:0;
+  left:0;
+}
+.sauna{
+  flex-direction: column;
+}
+.sauna-img{
+  width: 360px;
+}
+.trainers{
+  grid-template-columns: repeat(1,1fr);
+}
+.trainer-1,.trainer-4{
+  display: none;
+}
+.no-img{
+  display: none;
+}
+.calculate-BMI{
+  flex-direction: column;
+}
+.inputs-headline{
+  width: 300px;
+  padding: 5px;
+}
+.input{
+  padding: 5px;
+}
+.get-started{
+  flex-direction: column;
+}
 }
